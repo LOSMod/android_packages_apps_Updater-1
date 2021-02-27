@@ -170,13 +170,11 @@ public class Utils {
 
         String serverUrl = context.getString(R.string.updater_server_url);
 
-        return serverUrl.replace("{device}", device);
+        return serverUrl;
     }
 
     public static String getChangelogURL(Context context) {
-        String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
-                SystemProperties.get(Constants.PROP_DEVICE));
-        return context.getString(R.string.changelog_url, device);
+        return context.getString(R.string.changelog_url);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
